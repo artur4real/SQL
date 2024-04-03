@@ -1,0 +1,57 @@
+CREATE DATABASE Polyclinic;
+GO
+ 
+USE Polyclinic;
+GO
+ 
+CREATE TABLE Polyclinic	 (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Surname VARCHAR(50),
+  Age INT
+);
+ 
+INSERT INTO Polyclinic (ID, Name, Surname, Age) VALUES
+(1, 'Marina', 'Dbar', 10),
+(2, 'Vladimir', 'Kim', 10),
+(3, 'Oleg', 'Shkuratov', 12),
+(4, 'Ivan', 'Ivanov', 12),
+(5, 'Petr', 'Petrov', 12),
+(6, 'Boris', 'Borisov', 12),
+(7, 'Marina', 'Sokolova', 2),
+(8, 'Molly', 'Davis', 2),
+(9, 'Bailey', 'Rodriguez', 6),
+(10, 'Daisy', 'Martinez', 2);
+ 
+CREATE VIEW namer1 
+AS SELECT Name, Surname FROM Polyclinic WHERE Age = 2;
+ 
+CREATE view namer2
+AS SELECT Name      
+FROM Polyclinic WHERE Name  LIKE 'M%';
+ 
+CREATE view namer3
+ AS SELECT Name,Surname
+FROM Polyclinic WHERE Surname LIKE '%M%';
+ 
+CREATE view namer4
+AS SELECT Name, Surname
+FROM Polyclinic
+ORDER BY Name;
+ 
+CREATE view namer5
+AS SELECT AVG (Age) AS AverageAge
+ From Polyclinic
+ 
+ CREATE view namer6
+ AS SELECT MAX(Age) AS OldAge
+ From Polyclinic
+ 
+ CREATE view namer7
+ AS SELECT MIN(Age) AS OldAge
+ From Polyclinic
+ 
+    AS SELECT Age
+    FROM Polyclinic
+    WHERE  Age = 2;
+	
